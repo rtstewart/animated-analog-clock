@@ -52,7 +52,7 @@ let clock = (function(){
     var cosAngle;
     var degreeToRadian = Math.PI/180;
     switch(whichHand) {
-      case "hour":
+      case hourHand:
             /* change box-shadow of hour hand according to its orientation */
             sinAngle = Math.sin(degreeToRadian*30*timeValue);
             cosAngle = Math.cos(degreeToRadian*30*timeValue);
@@ -61,7 +61,7 @@ let clock = (function(){
             hourHand.setAttribute('style',
              'box-shadow: '+ -0.25*sinAngle+'rem 0 0.45rem 0 rgba(170, 159, 142, 0.5) inset, '+ 0.25*sinAngle+'rem 0 0.45rem 0 rgba(244, 239, 227, 0.9) inset, 0 '+ -0.1*sinAngle+'rem 0.25rem 0 rgba(244, 239, 227, 0.9) inset, '+0.3*sinAngle+'rem '+0.3*cosAngle+'rem 0.3rem 0 rgba(141, 132, 117, 0.7)');
           break;
-      case "minute":
+      case minuteHand:
             /* change box-shadow of minute hand according to its orientation */
             sinAngle = Math.sin(degreeToRadian*6*timeValue); /* will equal 0 at 12 o'clock */
             cosAngle = Math.cos(degreeToRadian*6*timeValue); /* will equal 1 at 12 o'clock */
@@ -70,7 +70,7 @@ let clock = (function(){
             minuteHand.setAttribute('style',
              'box-shadow: '+ -0.25*sinAngle+'rem 0 0.45rem 0 rgba(170, 159, 142, 0.5) inset, '+ 0.25*sinAngle+'rem 0 0.45rem 0 rgba(244, 239, 227, 0.9) inset, 0 '+ -0.1*sinAngle+'rem 0.25rem 0 rgba(244, 239, 227, 0.9) inset, '+0.35*sinAngle+'rem '+0.35*cosAngle+'rem 0.35rem 0 rgba(141, 132, 117, 0.7)');
           break;
-      case "second":
+      case secondHand:
             /* change box-shadow of second hand according to its orientation */
             sinAngle = Math.sin(degreeToRadian*6*timeValue);
             cosAngle = Math.cos(degreeToRadian*6*timeValue);
@@ -98,17 +98,17 @@ let clock = (function(){
     // initial second hand setting
     secondsContainer.setAttribute('style', 'transform: rotate('+6 * now.getSeconds()+'deg)');
     // set shadow
-    setShadow("second",now.getSeconds());
+    setShadow(secondHand, now.getSeconds());
 
     // initial minute hand setting
     minutesContainer.setAttribute('style', 'transform: rotate('+6 * now.getMinutes()+'deg)');
     // set shadow
-    setShadow("minute",now.getMinutes());
+    setShadow(minuteHand, now.getMinutes());
 
     // initial hour hand setting
     hoursContainer.setAttribute('style', 'transform: rotate('+30 * now.getHours()+'deg)');
     // set shadow
-    setShadow("hour",now.getHours());
+    setShadow(hourHand, now.getHours());
   }
 
   // Updates the time and position of the clock hands
@@ -123,7 +123,7 @@ let clock = (function(){
       hoursContainer.setAttribute('style', 'transform: rotate('+30 * now.getHours()+'deg)');
 
       /* set box-shadow of hour hand according to its orientation */
-      setShadow("hour", now.getHours());
+      setShadow(hourHand, now.getHours());
     }
     // If seconds is at zero, set current minute
     if(now.getSeconds() === 0){
@@ -132,7 +132,7 @@ let clock = (function(){
       minutesContainer.setAttribute('style', 'transform: rotate('+6 * now.getMinutes()+'deg)');
 
       /* set box-shadow of minute hand according to its orientation */
-      setShadow("minute", now.getMinutes());
+      setShadow(minuteHand, now.getMinutes());
     }
     // Set seconds
     // elSeconds.innerHTML = now.getSeconds();
@@ -140,7 +140,7 @@ let clock = (function(){
     secondsContainer.setAttribute('style', 'transform: rotate('+6 * now.getSeconds()+'deg)');
 
     /* set box-shadow of second hand according to its orientation */
-    setShadow("second", now.getSeconds());
+    setShadow(secondHand, now.getSeconds());
   }
 
   // returns an object containing a property with the initialization function.
