@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- author: Robert T. Stewart, with guidance from:
+     https://cssanimation.rocks/clocks/ -->
+
+    <!-- https://css-tricks.com/examples/ShapesOfCSS/ -->
+    <!-- https://www.sitepoint.com/syncing-css-animations-with-html5-audio/ -->
+    <meta charset="UTF-8">
+    <!-- Helps with rendering on mobile devices -->
+    <!-- see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Analog Clock</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/animation.css"> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <span class="number">12</span>
+        <span class="number">3</span>
+        <span class="number">6</span>
+        <span class="number">9</span>
+        <div class="ring">
+          <div class="disc">
+            <div class="inner-disc"></div>
+          </div>
+        </div>
+        <div class="secondsContainer">
+          <div class="secondHand"></div>
+        </div>
+        <div class="hoursContainer">
+          <div class="hourHand"></div>
+        </div>
+        <div class="minutesContainer">
+          <div class="minuteHand"></div>
+        </div>
+        <div class="center">
+          <div class="center-of-the-middle"></div>
+        </div>
+      </div><!-- end .clock -->
+    </div><!-- end .container -->
+    <script type="text/javascript" src="scripts/clock.js"></script>
+  </body>
+</html>

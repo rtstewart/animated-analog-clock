@@ -1,0 +1,250 @@
+/* main.css - authored by Robert T. Stewart */
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #e0d9ce;
+}
+.clock {
+  /* color: shadow underneath: #a49787 = rgb(164, 151, 135), 61%; */
+  /* rgb(141, 132, 117) is 51% */
+  position: relative;
+  padding: 0;
+  /* clock image bg: #f4efe3; rgb(244, 239, 227); 92% http://www.w3schools.com/colors/colors_picker.asp */
+  /* rgb(251, 248, 240); 96% */
+  background-color: #f4efe3;
+  margin: 1rem auto;
+  width: 18rem;
+  height: 18rem;
+  /*border: 1px solid rgba(50, 50, 50, 0.2);*/
+  border-radius: 21%;
+  /* box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit; */
+  /* #aa9f8e = rgb(170, 159, 142) */
+  /*box-shadow:
+    0 5px 25px 0 rgba(100, 100, 100, 0.5),
+    0 2px 5px 0 rgba(100, 100, 100, 0.5),
+    0 2px 8px 0 rgba(50, 50, 50, 0.25),
+    0 -6px 10px 0px rgba(50, 50, 50, 0.15) inset,
+    0 -2px 2px 0px rgba(255, 255, 255, 1) inset,
+    0 -3px 3px 0px rgba(50, 50, 50, 0.15),
+    10px 0 10px 0px rgba(50, 50, 50, 0.1) inset,
+    -10px 0 10px 0px rgba(50, 50, 50, 0.1) inset,
+    3px 0 3px 0px rgba(255, 255, 255, 1) inset,
+    -3px 0 3px 0px rgba(255, 255, 255, 1) inset ;*/
+  /*box-shadow:
+    0 8px 20px 0 rgba(170, 159, 142, 0.75),
+    0 2px 5px 0 rgba(170, 159, 142, 0.75),
+    0 2px 8px 0 rgba(170, 159, 142, 0.25),
+    0 -6px 10px 0px rgba(170, 159, 142, 0.5) inset,
+    0 -2px 3px 0px rgba(255, 255, 255, 0.9) inset,
+    0 -2px 3px 0px rgba(244, 239, 227, 0.9) inset,
+    0 -3px 3px 0px rgba(170, 159, 142, 0.15),
+    10px 0 10px 0px rgba(170, 159, 142, 0.15) inset,
+    -10px 0 10px 0px rgba(170, 159, 142, 0.15) inset,
+    8px 0 5px 0px rgba(255, 255, 255, 0.75) inset,
+    -8px 0 5px 0px rgba(255, 255, 255, 0.75) inset,
+    8px 0 5px 0px rgba(244, 239, 227, 0.9) inset,
+    -8px 0 5px 0px rgba(244, 239, 227, 0.9) inset;*/
+
+    box-shadow:
+    0 0.5rem 1.25rem 0 rgba(170, 159, 142, 0.75),
+    0 0.125rem 0.375rem 0 rgba(170, 159, 142, 0.75),
+    0 0.125rem 0.5rem 0 rgba(170, 159, 142, 0.25),
+    0 -0.375rem 0.625rem 0 rgba(170, 159, 142, 0.5) inset,
+    0 -0.125rem 0.25rem 0 rgba(255, 255, 255, 0.9) inset,
+    0 -0.125rem 0.25rem 0 rgba(244, 239, 227, 0.9) inset,
+    0 -0.25rem 0.25rem 0 rgba(170, 159, 142, 0.15),
+    0.625rem 0 0.625rem 0 rgba(170, 159, 142, 0.15) inset,
+    -0.625rem 0 0.625rem 0 rgba(170, 159, 142, 0.15) inset,
+    0.5rem 0 0.375rem 0 rgba(251, 248, 240, 0.75) inset,
+    -0.5rem 0 0.375rem 0 rgba(251, 248, 240, 0.75) inset,
+    0.5rem 0 0.375rem 0 rgba(244, 239, 227, 0.9) inset,
+    -0.5rem 0 0.375rem 0 rgba(244, 239, 227, 0.9) inset;
+  }
+  .number {
+    /*border: 1px solid black;*/
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+    color: #b5ad9e;
+  }
+  .number:first-child {
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .number:nth-child(2) {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .number:nth-child(3) {
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .number:nth-child(4) {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12rem;
+    height: 12rem;
+    border-radius: 6rem;
+    box-shadow: 0 0 0.2rem 0 rgba(170, 159, 142, 0.5);
+    background: #559fa0; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(110deg, #559fa0, #c4dcc2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(110deg, #559fa0, #c4dcc2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(110deg, #559fa0, #c4dcc2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(110deg, #559fa0, #c4dcc2); /* Standard syntax (must be last) */
+  }
+  .disc, .inner-disc {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
+    position: relative;
+    background-color: #f4efe3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .disc {
+    box-shadow: 0 0 0.2rem 0 rgba(170, 159, 142, 0.5) inset;
+  }
+  .inner-disc {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+    box-shadow:
+    0 0.375rem 0.375rem 0 rgba(170, 159, 142, 0.35),
+    0 -0.375rem 1.25rem 0 rgba(170, 159, 142, 0.25) inset,
+    0 -0.375rem 0.375rem 0 rgba(255, 255, 255, 0.1) inset,
+    0 -0.125rem 0.125rem 0 rgba(170, 159, 142, 0.15),
+    0 -0.125rem 0.625rem 0 rgba(255, 255, 255, 1) inset;
+  }
+  /* stack the minutes, hours, and seconds containers in the .clock container and make each the size of the .clock container, so they also share centers with each other; */
+  .minutesContainer, .hoursContainer, .secondsContainer {
+    /*border: 1px solid red;*/
+    position: absolute;
+    /* the next four rules will make the divs the exact size of the
+      .clock and share centers */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .hourHand {
+    background: #f4efe3;
+    border: 1px solid rgba(200, 200, 200, 0.85);
+   /* box-shadow: -0.18rem 0 0.45rem 0 rgba(170, 159, 142, 0.25) inset,
+    0.2rem 0 0.4rem 0 rgba(170, 159, 142, 0.75),
+    0 -0.125rem 0.25rem 0 rgba(244, 239, 227, 0.9) inset;*/
+    position: absolute;
+    width: 4%;
+    /*height: 20%;*/
+    height: 5rem;
+    top: 50%;
+    left: 50%;
+    /*box-shadow: 0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35), -0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35);*/
+    transform-origin: 50% 75%;
+
+    /* below sets hand like in image */
+    transform: translate(-50%, -75%) rotate(300deg);
+
+    /* if left uncommented out, the rule below will "win" over the one above */
+    transform: translate(-50%, -75%);
+  }
+  .minuteHand {
+    background: #f4efe3;
+    border: 1px solid rgba(200, 200, 200, 0.85);
+/*    box-shadow: -0.18rem 0 0.45rem 0 rgba(170, 159, 142, 0.25) inset,
+    0.2rem 0 0.4rem 0 rgba(170, 159, 142, 0.75),
+    0 -0.125rem 0.25rem 0 rgba(244, 239, 227, 0.9) inset;*/
+    position: absolute;
+    width: 4%;
+    /*height: 20%;*/
+    height: 7.75rem;
+    top: 50%;
+    left: 50%;
+    /*box-shadow: 0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35), -0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35);*/
+    transform-origin: 50% 84%;
+
+    /* below sets hand like in image */
+    transform: translate(-50%, -84%) rotate(30deg);
+
+    /* if left uncommented out, the rule below will "win" over the one above */
+    transform: translate(-50%, -84%);
+  }
+  .secondHand {
+    background: #fa5e63; /* #fa5e63 = rgb(250, 94, 99) lighter red */
+    border: 1px solid rgba(250, 94, 99, 0.8); /* #e6404f = rgb(230, 64, 79) deeper red */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+/*    box-shadow: -0.09rem 0 0.1rem 0 rgba(230, 64, 79, 0.85) inset,
+    0.1rem 0 0.2rem 0 rgba(170, 159, 142, 0.75),
+    0 -0.0625rem 0.125rem 0 rgba(244, 239, 227, 0.9) inset;*/
+    position: absolute;
+    width: 2%;
+    /*height: 20%;*/
+    height: 7.5rem;
+    top: 50%;
+    left: 50%;
+    /*box-shadow: 0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35), -0.125rem 0 0.125rem 0 rgba(170, 159, 142, 0.35);*/
+
+    transform-origin: 50% 84%;
+
+    /* below sets hand like in image */
+    transform: translate(-50%, -84%) rotate(140deg);
+
+    /* if left uncommented out, the rule below will "win" over the one above */
+    transform: translate(-50%, -84%);
+  }
+.center {
+  /*border: 1px solid black;*/
+  position: relative;
+  background-color: #f4efe3;
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.875rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0.04rem 0.07rem 0.07rem 0 rgba(170, 159, 142, 0.8),
+    0.02rem 0.02rem 0.02rem 0.02rem rgba(170, 159, 142, 0.7),
+    0 0 0.07rem 0.04rem rgba(170, 159, 142, 0.4) inset;
+}
+.center-of-the-middle {
+  position: relative;
+  text-align: center;
+  /*border: 1px solid green;*/  /* #ffc56d = rgb(255, 197, 109) light orange */
+
+  background-color: #ffc56d; /* rgb(245, 147, 62) = #f5933e darker orange */
+  box-shadow:
+  0.03rem 0.05rem 0.05rem 0 rgba(170, 159, 142, 0.9),
+  -0.08rem -0.18rem 0.25rem 0 rgba(245, 147, 62, 0.9) inset,
+  0.03rem 0.06rem 0.2rem 0 rgba(244, 239, 227, 0.9) inset;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.45rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 0.9rem;
+  font-weight: 100;
+}
