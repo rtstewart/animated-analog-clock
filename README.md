@@ -25,8 +25,6 @@ Next, in creating a hand with its position property set to absolute, it can then
 
 In order to provide a bit more dimension to the clock, I chose to apply what I'll call dynamic shadow-casting and highlighting to the clock hands. If you have the patience to watch the clock hands, you will notice that the shadows cast, and the highlights of the hands, are appropriate for each hand's position assuming the light source comes roughly from directly above - that is as I interpret the provided image that I was to emulate with HTML/CSS:
 
-
-
 This was accomplished through the JavaScript that also provided the clock movement. The `box-shadow` CSS property was applied to the hands with the use of simple `Math.sin()`, and `Math.cos()` within the JavaScript, clock.js, that my partner Kevin Lufkin wrote to provide the correct time and clock movement.
 
 ## Notable JavaScript Challenges
@@ -35,8 +33,8 @@ JavaScript Collaborator: Kevin Lufkin
 
 ### Topic 1
 
-Yada yada
+...
 
 ### Topic 1
 
-Yada yada
+...
