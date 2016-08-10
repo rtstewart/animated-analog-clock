@@ -4,7 +4,7 @@ This was a collaborative project to build an animated analog clock styled from t
 
 <img src="UI-Clock-Icon-Blue.png" width="400px">
 
-[Bobby Stewart](https://github.com/rtstewart) was charged with authoring the HTML and CSS for the clock. [Kevin Lufkin](https://github.com/klufkin) was charged with authoring the JavaScript to provide clock movement corresponding to the actual local time.
+[Bobby Stewart](https://github.com/rtstewart) was charged with authoring the HTML and CSS to emulate the analog clock image above. [Kevin Lufkin](https://github.com/klufkin) was charged with authoring the JavaScript to provide clock movement corresponding to the actual local time.
 
 [view GitHub hosted solution](https://rtstewart.github.io/animated-analog-clock/clock-analog-QA.html)
 
