@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clock Hand</title>
+  <style type="text/css">
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 16px;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #e0d9ce;
+    }
+    .clock {
+      position: relative;
+      padding: 0;
+      background-color: #fff;
+      margin: 1rem auto;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 21%;
+    }
+    .handContainer {
+      border: 1px solid red;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .simpleHand {
+      border: 1px solid rgba(50, 50, 50, 0.5);
+      position: absolute;
+      width: 5.5555%; /* about 1rem since .clock is 18rem square 1/18=0.055555 */
+      height: 44.4444%; /* about 8rem since 8/18=0.444444 */
+      box-shadow: -0.25rem 0 0.45rem 0 rgba(255, 0, 0, 0.5) inset,
+      0.25rem 0 0.45rem 0 rgba(0, 0, 255, 0.5) inset,
+      0 .2rem 0.2rem 0 rgba(255, 255, 255, 1) inset;
+      top: 50%; /* previously used */
+      left: 50%; /* previously used */
+      top: 5.5555%; /* this places bottom edge of hand at clock horizontal center
+                      since the clock height is 18rem and the hand is now about
+                      8rem in height */
+      top: 11.1111%; /* since 1rem is about 5.5555%, then add that to above to offset */
+      left: 47.2222%; /* to center, use 50% - 0.5*width% = 50% - 2.7777% here */
+      /*transform: translate(-50%, -100%);*/
+      /*transform-origin: 50% 100%;*/
+
+      /* since the origin is, by default, in the center, width and height-wise, of
+        a div, we need to move the origin to correspond with the translation */
+      /*transform: translate(-50%, -87.5%);*/
+      /*transform-origin: 50% 87.5%;*/
+      transform-origin: 50% 88.8888%; /* x value should still be 50% which requires
+                                      accurate left: %;
+                                      y value should be 100% - top: % value, which
+                                      requires accurate top: %; value for true
+                                      center rotation */
+    }
+    .comments {
+      width: 90%;
+      margin: 1rem auto;
+    }
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes translatorotater {
+      0% {
+        transform: translate(-50%, -87.5%) rotate(0deg);
+      }
+      10% {
+        transform: translate(-50%, -87.5%) rotate(36deg);
+      }
+      20% {
+        transform: translate(-50%, -87.5%) rotate(72deg);
+      }
+      30% {
+        transform: translate(-50%, -87.5%) rotate(108deg);
+      }
+      40% {
+        transform: translate(-50%, -87.5%) rotate(144deg);
+      }
+      50% {
+        transform: translate(-50%, -87.5%) rotate(180deg);
+      }
+      60% {
+        transform: translate(-50%, -87.5%) rotate(216deg);
+      }
+      70% {
+        transform: translate(-50%, -87.5%) rotate(252deg);
+      }
+      80% {
+        transform: translate(-50%, -87.5%) rotate(288deg);
+      }
+      90% {
+        transform: translate(-50%, -87.5%) rotate(324deg);
+      }
+      100% {
+        transform: translate(-50%, -87.5%) rotate(360deg);
+      }
+    }
+    @keyframes rotater {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(36deg);
+      }
+      20% {
+        transform: rotate(72deg);
+      }
+      30% {
+        transform: rotate(108deg);
+      }
+      40% {
+        transform: rotate(144deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      60% {
+        transform: rotate(216deg);
+      }
+      70% {
+        transform: rotate(252deg);
+      }
+      80% {
+        transform: rotate(288deg);
+      }
+      90% {
+        transform: rotate(324deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .clock:hover .simpleHand  {
+       animation: rotater 10s infinite linear;
+    }
+    .clock:hover .simpleHand {
+      /*animation: translatorotater 10s infinite linear;*/
+    }
+    .clock:hover .handContainer {
+      /*animation: rotater 10s infinite linear;*/
+    }
+    .center {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 50%;
+      left: 50%;
+      font-weight: 100;
+      line-height: 0;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="handContainer">
+      <div class="simpleHand"></div>
+    </div>
+    <div class="center">+</div>
+  </div><!-- end .clock -->
+  <div class="comments"><p>This is an alternative solution to creating easy-to-rotate clock hands.<br>
+  The hand is now placed directly at the intended position for rotation by using percentage values in <code>top</code> and <code>left</code> for indicating <code>position: absolute;</code> taking into account the descriptions of its <code>width</code> and <code>height</code>. The hand origin is then transformed as appropriate for the <code>width</code> and <code>height</code> descriptions now used. Please view the source code which has comments explaining how values are arrived at. This method is a bit more tedious with respect to calculations. However, since this avoids any <code>transform: translate();</code> applied to the hand, the hand can be directly rotated without simultaneous translation. It also reduces the need for a &lt;div> element to contain each hand. Just another way to do it.<br>
+  Hover over white clock outline to see the result.</p></div>
+</body>
+</html>
