@@ -12,7 +12,7 @@ This was a collaborative project to build an animated analog clock styled from t
 
 HTML/CSS Collaborator: Bobby Stewart
 
-### Creating and suitably positioning the clock hands for rotation
+### Creating, and suitably positioning the clock hands for rotation
 
 The clock hands were created with `<div>` elements. By default, an element's origin, which is what it would rotate about, is at the center, both vertically and horizontally, of the element. In order to rotate the clock hands with a "normal" appearance, it was necessary to translate the hand element and possibly its origin, depending on whether it was to be directly or indirectly rotated - this will be explained below.
 
