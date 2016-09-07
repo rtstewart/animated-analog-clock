@@ -8,7 +8,7 @@ This was a collaborative project to build an animated analog clock styled from t
 
 [view GitHub hosted solution](https://rtstewart.github.io/animated-analog-clock/clock-analog-QA.html)
 
-## Notable HTML/CSS Challenges
+## Pertinent HTML & CSS details
 
 HTML/CSS Collaborator: Bobby Stewart
 
